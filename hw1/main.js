@@ -1,6 +1,6 @@
-let a='hello';
-let b='owu';
-let c ='com';
+let r='hello';
+let h='owu';
+let k ='com';
 let v='ua';
 let w=1;
 let y=10;
@@ -12,10 +12,14 @@ let q=16;
 let t=true;
 let o=false;
 
-console.log(a,b,c,v,w,y,f,e,l,t,o,q,u);
+console.log(r,h,k,v,w,y,f,e,l,t,o,q,u);
 let person={
     firstName:'Zaiats',
     middleName:'Anastasiia',
     lastName:'Nazarivna'
 };
 console.log(person);
+let a=100;
+let b='100';
+let c=true;
+console.log(typeof a,b,c);
