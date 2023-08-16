@@ -13,3 +13,9 @@ let t=true;
 let o=false;
 
 console.log(a,b,c,v,w,y,f,e,l,t,o,q,u);
+let person={
+    firstName:'Zaiats',
+    middleName:'Anastasiia',
+    lastName:'Nazarivna'
+};
+console.log(person);
