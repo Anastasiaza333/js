@@ -1,3 +1,4 @@
+//1
 let r='hello';
 let h='owu';
 let k ='com';
@@ -13,13 +14,25 @@ let t=true;
 let o=false;
 
 console.log(r,h,k,v,w,y,f,e,l,t,o,q,u);
+//2
 let person={
     firstName:'Zaiats',
     middleName:'Anastasiia',
     lastName:'Nazarivna'
 };
 console.log(person);
+//3
 let a=100;
 let b='100';
 let c=true;
 console.log(typeof a,b,c);
+
+//additional
+let nameUser=prompt('your name');
+console.log(nameUser);
+
+let surnameUser=prompt('your po-batkovi');
+console.log(surnameUser);
+
+let ageUser=prompt('your age');
+console.log(ageUser);
