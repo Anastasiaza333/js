@@ -14,12 +14,18 @@ let t=true;
 let o=false;
 
 console.log(r,h,k,v,w,y,f,e,l,t,o,q,u);
-//2
-let person={
-    firstName:'Zaiats',
-    middleName:'Anastasiia',
-    lastName:'Nazarivna'
-};
+// //2
+// let person={
+//     firstName:'Zaiats',
+//     middleName:'Anastasiia',
+//     lastName:'Nazarivna'
+// };
+//2.1
+let firstName='Zaiats';
+    let middleName='Anastasiia';
+    let lastName='Nazarivna';
+    let person = firstName + middleName + lastName;
+    console.log(person);
 console.log(person);
 //3
 let a=100;
@@ -35,4 +41,5 @@ let surnameUser=prompt('your po-batkovi');
 console.log(surnameUser);
 
 let ageUser=prompt('your age');
+ageUser= +'your age';
 console.log(ageUser);
