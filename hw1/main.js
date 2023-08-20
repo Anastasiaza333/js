@@ -40,6 +40,5 @@ console.log(nameUser);
 let surnameUser=prompt('your po-batkovi');
 console.log(surnameUser);
 
-let ageUser=prompt('your age');
-ageUser= +'your age';
+let ageUser=+prompt('your age');
 console.log(ageUser);
