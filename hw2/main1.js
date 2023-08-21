@@ -51,20 +51,19 @@ console.log(book3);
 // console.log(book6);
 //4
 let users=[
-    {name:'nastiia',username:'light',password:123321},
-    {name:'vasya',username:'boy',password:987765},
-    {name:'nazar',username:'cool',password:643486},
-    {name:'igor',username:'yep',password:121093},
-    {name:'yuliia',username:'water',password:494306},
-    {name:'katiia',username:'sun',password:324143},
-    {name:'sofiia',username:'you',password:898598},
-    {name:'vita',username:'beauty',password:754747},
-    {name:'oliia',username:'flower',password:359095},
-    {name:'sam',username:'kaktus',password:949839}
+    {name:'nastiia',username:'light',password:123321},//0
+    {name:'vasya',username:'boy',password:987765},//1
+    {name:'nazar',username:'cool',password:643486},//2
+    {name:'igor',username:'yep',password:121093},//3
+    {name:'yuliia',username:'water',password:494306},//4
+    {name:'katiia',username:'sun',password:324143},//5
+    {name:'sofiia',username:'you',password:898598},//6
+    {name:'vita',username:'beauty',password:754747},//7
+    {name:'oliia',username:'flower',password:359095},//8
+    {name:'sam',username:'kaktus',password:949839}//9
 
 
 ];
-
 console.log(users.password);
 
 //логічні розгалуження
@@ -97,37 +96,71 @@ if(a!==0){
 // }
 
 //2
-// let time=
+let time=+prompt('введіть число від 1 до 59');
+time = x;
+if(x<15){
+    console.log('перша частина години');
+}else if(x>15 && x<30){
+    console.log('друга частина години');
+}else if(x>30 && x<45){
+    console.log('третя частина години ');
+}else{
+    console.log('четверта частина години');
+}
 //3
+let day=+prompt('введіть число від 1 до 31');
+if(x<10){
+    console.log('перша декада');
+}else if (11<x<20 ){
+    console.log('друга декада');
+}else {
+    console.log('третя декада');
+}
 //4
-// let schedule=prompt('what day is it today?');
+let schedule=prompt('what day is it today?');
 
 switch(schedule) {
     case '1':
         console.log('monday');
+        break;
 
 
 case '2' :
     console.log('tuesday');
+    break;
 
     case '3' :
         console.log('wensday');
+        break;
 
     case '4' :
         console.log('thursday');
+        break;
+
 
     case '5' :
         console.log('friday');
+        break;
 
     case '6' :
         console.log('saturday');
+        break;
 
     case '7' :
         console.log('sunday');
-
+        break;
 }
 
 //5
+let f=+prompt('введіть число f' );
+let b=+prompt('введіть число b');
+if(f>b){
+    console.log('число f більше');
+}else if(b>f) {
+    console.log('число b більше');
+}else{
+    console.log('числа рівні');
+}
 
 //6
 // let x=
