@@ -25,13 +25,16 @@ let book3={
 };
 console.log(book3);
 //3
-// let book4={
-//     title:'family' ,
-//     pageCount:300,
-//     genre:'comedy',
-//     authors:[name:'vasya',age:34],
-//
-// };
+let book4={
+    title:'family' ,
+    pageCount:300,
+    genre:'comedy',
+    authors:[
+        {name:'vasya',age:34},
+        {name:'nikita',age:12}
+    ],
+
+};
 // console.log(book4);
 // let book5={
 //     title:'family' ,
@@ -64,7 +67,16 @@ let users=[
 
 
 ];
-console.log(users.password);
+console.log(users[0].password);
+console.log(users[1].password);
+console.log(users[2].password);
+console.log(users[3].password);
+console.log(users[4].password);
+console.log(users[5].password);
+console.log(users[6].password);
+console.log(users[7].password);
+console.log(users[8].password);
+console.log(users[9].password);
 
 //логічні розгалуження
 
@@ -96,22 +108,21 @@ if(a!==0){
 // }
 
 //2
-let time=+prompt('введіть число від 1 до 59');
-time = x;
-if(x<15){
-    console.log('перша частина години');
-}else if(x>15 && x<30){
-    console.log('друга частина години');
-}else if(x>30 && x<45){
-    console.log('третя частина години ');
-}else{
+let time=34;
+if(time>45 && time<=59){
     console.log('четверта частина години');
+}else if(time>30 && time<=45){
+    console.log('третя частина години');
+}else if(time>15 && time<=30){
+    console.log('друга частина години ');
+}else if(time>0 && time<=15){
+    console.log('перша частина години');
 }
 //3
 let day=+prompt('введіть число від 1 до 31');
-if(x<10){
+if(day>0 && day<=10) {
     console.log('перша декада');
-}else if (11<x<20 ){
+}else if ( day>10 && day<=20 ){
     console.log('друга декада');
 }else {
     console.log('третя декада');
@@ -149,6 +160,8 @@ case '2' :
     case '7' :
         console.log('sunday');
         break;
+    default:
+        console.log('error');
 }
 
 //5
@@ -163,5 +176,16 @@ if(f>b){
 }
 
 //6
-// let x=
+// - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
+//     за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
+
+let x1='';//фолсі це пуста стрічка ,тому підставляється дефолт ,тому що у нас оператор або
+let result=x1 || 'default';
+let result2=x1 ?? 'default';
+console.log(result);
+console.log(result2);
+let x2=0;
+let result3=x2 || 'default';
+console.log(result3);
 //7
+//     - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
