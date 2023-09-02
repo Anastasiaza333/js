@@ -6,7 +6,7 @@
  square(12,4);
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 function squareOfCircle(r){
-    let result=2*3.14*r;
+    let result=r*3.14*r;
     return result;
 
 }
@@ -15,7 +15,7 @@ console.log(p);
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 function squareOfCylinder(h,r){
-    let result=2*3.14*r*h;
+    let result=(2*Math.PI*r*r)+(2*Math.PI*r*h);
     return result;
 
 }
@@ -50,42 +50,50 @@ foo1('cool');
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 function foo2(text){
     document.write(`<ul>`);
+    for (let i = 0; i < 3; i++) {
+        const numberElement = 3[i];
+
+
     document.write(`
       <li>${text}</li>
-      <li>${text}</li>
-      <li>${text}</li>
+      
 `)
-
+    }
     document.write(`</ul>`);
 
 
 }
 foo2('cool');
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-const array=[3,'hey',true];
-function list(array){
+function foo3(arr){
     document.write(`<ul>`);
-    for(const item of array){
-        document.write(`<li>${array}</li>`);
+    for (const item of arr) {
+
+
+
+        document.write(`
+      <li>${item}</li>
+      
+`)
     }
     document.write(`</ul>`);
+
+
 }
-list(array);
+foo3(['dfsf','sdbag',34,true]);
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-let array=[{
-    id:32,
-    name:'vasya',
-    age:21,
-}];
-function writer(id,name,age){
-    document.write(`<div>${id}</div>
+const users=[{id:1,name:'vasya',age:31}];
+function func(arr){
+    for (const user of arr) {
+        document.write(`<div>
+<p>${user.id}</p>
+<p>${user.name}</p>
+<p>${user.age}</p>
+</div>
 `)
-    document.write(`<div>${name}</div>
-`)
-    document.write(`<div>${age}</div>
-`)
+    }
 }
-writer(32,'vasya',21);
+func(users);
 // - створити функцію яка повертає найменьше число з масиву
 
 function findMinimum(arr){
@@ -116,5 +124,26 @@ function sum(arr){
 sum(2,5,2,6);
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+function swap(arr,index1,index2){
+    const numIndex1=arr[index1];
+    const numIndex2=arr[index2];
+
+    arr[index1]=numIndex1;
+    arr[index2]=numIndex2;
+
+    return arr;
+}
+console.log(swap([11,22,33,44],0,1));
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+function exchange(sum,currencies,resultCurrency){
+    let result=0;
+    for(const cur of currencies){
+        if(cur.currency===resultCurrency){
+            result=sum/cur.value
+        }
+    }
+    return result;
+}
+const  result=exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD');
+console.log('result:',result);
