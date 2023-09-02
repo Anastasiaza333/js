@@ -128,8 +128,8 @@ function swap(arr,index1,index2){
     const numIndex1=arr[index1];
     const numIndex2=arr[index2];
 
-    arr[index1]=numIndex1;
-    arr[index2]=numIndex2;
+    arr[index1]=numIndex2;
+    arr[index2]=numIndex1;
 
     return arr;
 }
