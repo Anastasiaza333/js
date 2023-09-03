@@ -22,30 +22,73 @@ let str = ' dirty string   ';
 console.log(str);
 console.log(str.replace(' ',''));
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
-    let s = 'Ревуть воли як ясла повні';
-let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
-
+let str4 = 'Ревуть воли як ясла повні';
+let split = str4.split(' ');
+console.log(split);
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
-// - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
-//     let nums = [11,21,3];
-// sortNums(nums,'ascending') // [3,11,21]
-// sortNums(nums,'descending') // [21,11,3]
+// const  arr=[10,8,-7,55,987,-1011,0,1050,0];
+// let mapedArray=arr.map((function(value){
+//     return{
 //
+//
+//     }
+// });
+// console.log(mapedArray);
+let numbers = [10, 8, -7, 55, 987, -1011, 0, 1050, 0];
+
+let strings = numbers.map(number => String(number));
+
+console.log(strings);
+
+// - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
+    let nums = [11,21,3];
+    function sortNums(nums){
+    let sort =nums.sort((a,b)=>{
+        return a - b;
+    });
+        console.log(sort);
+}
+
+sortNums(nums,'ascending');
+
+function sortNums2(nums){
+    let sort =nums.sort((a,b)=>{
+        return b - a ;
+    });
+    console.log(sort);
+}
+
+sortNums2(nums,'descending');
+
 // ==========================
-// - є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
 // -- відсортувати його за спаданням за monthDuration
+let sort=coursesAndDurationArray.sort((u1,u2)=>{
+    return u2.monthDuration -u1.monthDuration;
+});
+console.log(sort);
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
+let filteredUsers=coursesAndDurationArray.filter(value => value.monthDuration>5);
+console.log(filteredUsers);
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+
+let maped=coursesAndDurationArray.map(function (value, index){
+    return { id:index+1,title:value.name,monthDuration:value.monthDuration};
+})
+console.log(maped);
 // =========================
 //     описати колоду карт (від 6 до туза без джокерів)
+let cardSuit=['spade', 'diamond','heart', 'clubs'];
+let value=['6','7','8','9','10', 'ace','jack','queen','king','joker'];
+let color=['red','black'];
+// let find=
 // - знайти піковий туз
 // - всі шістки
 // - всі червоні карти
@@ -67,7 +110,85 @@ let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', '
 //     hearts:[],
 //     clubs:[]
 // }
+
+
+
+
 // =========================
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+    let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+  console.log(coursesArray);
 // --написати пошук всіх об'єктів, в який в modules є sass
+let find=coursesArray.find(value => value.modules==='sass');
+console.log(find);
 // --написати пошук всіх об'єктів, в який в modules є docker
+let find1=coursesArray.find(value => value.modules==='docker');
+console.log(find1);
