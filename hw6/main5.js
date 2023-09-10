@@ -19,27 +19,17 @@ console.log(str1.toLowerCase());
 console.log(str2.toLowerCase());
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str = ' dirty string   ';
-console.log(str);
-console.log(str.replace(' ',''));
+console.log(str.trim());
+// console.log(str.replace(' ',''));
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 let str4 = 'Ревуть воли як ясла повні';
-let split = str4.split(' ');
-console.log(split);
+let stringToarray=(str) => str.split(' ');
+console.log(stringToarray((str4)));
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
-// const  arr=[10,8,-7,55,987,-1011,0,1050,0];
-// let mapedArray=arr.map((function(value){
-//     return{
-//
-//
-//     }
-// });
-// console.log(mapedArray);
-let numbers = [10, 8, -7, 55, 987, -1011, 0, 1050, 0];
-
-let strings = numbers.map(number => String(number));
-
-console.log(strings);
-
+const  arr=[10,8,-7,55,987,-1011,0,1050,0];
+console.log(arr);
+const result4=arr.map((num)=>num.toString());
+console.log(result4);
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
     let nums = [11,21,3];
     function sortNums(nums){
@@ -80,21 +70,66 @@ console.log(filteredUsers);
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 
 let maped=coursesAndDurationArray.map(function (value, index){
-    return { id:index+1,title:value.name,monthDuration:value.monthDuration};
+    return { id:index+1,title:value.title,monthDuration:value.monthDuration};
 })
 console.log(maped);
 // =========================
 //     описати колоду карт (від 6 до туза без джокерів)
-let cardSuit=['spade', 'diamond','heart', 'clubs'];
-let value=['6','7','8','9','10', 'ace','jack','queen','king','joker'];
-let color=['red','black'];
-// let find=
+
+const cards = [
+    {cardSuit: 'spade', value: '6', color: 'black'},
+    {cardSuit: 'spade', value: '7', color: 'black'},
+    {cardSuit: 'spade', value: '8', color: 'black'},
+    {cardSuit: 'spade', value: '9', color: 'black'},
+    {cardSuit: 'spade', value: '10', color: 'black'},
+    {cardSuit: 'spade', value: 'ace', color: 'black'},
+    {cardSuit: 'spade', value: 'jack', color: 'black'},
+    {cardSuit: 'spade', value: 'queen', color: 'black'},
+    {cardSuit: 'spade', value: 'king', color: 'black'},
+    {cardSuit: 'clubs', value: '6', color: 'black'},
+    {cardSuit: 'clubs', value: '7', color: 'black'},
+    {cardSuit: 'clubs', value: '8', color: 'black'},
+    {cardSuit: 'clubs', value: '9', color: 'black'},
+    {cardSuit: 'clubs', value: '10', color: 'black'},
+    {cardSuit: 'clubs', value: 'ace', color: 'black'},
+    {cardSuit: 'clubs', value: 'jack', color: 'black'},
+    {cardSuit: 'clubs', value: 'queen', color: 'black'},
+    {cardSuit: 'clubs', value: 'king', color: 'black'},
+    {cardSuit: 'heart', value: '6', color: 'red'},
+    {cardSuit: 'heart', value: '7', color: 'red'},
+    {cardSuit: 'heart', value: '8', color: 'red'},
+    {cardSuit: 'heart', value: '9', color: 'red'},
+    {cardSuit: 'heart', value: '10', color: 'red'},
+    {cardSuit: 'heart', value: 'ace', color: 'red'},
+    {cardSuit: 'heart', value: 'jack', color: 'red'},
+    {cardSuit: 'heart', value: 'queen', color: 'red'},
+    {cardSuit: 'heart', value: 'king', color: 'red'},
+    {cardSuit: 'diamond', value: '6', color: 'red'},
+    {cardSuit: 'diamond', value: '7', color: 'red'},
+    {cardSuit: 'diamond', value: '8', color: 'red'},
+    {cardSuit: 'diamond', value: '9', color: 'red'},
+    {cardSuit: 'diamond', value: '10', color: 'red'},
+    {cardSuit: 'diamond', value: 'ace', color: 'red'},
+    {cardSuit: 'diamond', value: 'jack', color: 'red'},
+    {cardSuit: 'diamond', value: 'queen', color: 'red'},
+    {cardSuit: 'diamond', value: 'king', color: 'red'},
+]
+
 // - знайти піковий туз
+const ace=cards.filter((card)=>card.value==='ace'&& card.cardSuit==='spade');
+console.log(ace);
 // - всі шістки
+const six=cards.filter((card)=>card.value==='6');
+console.log(six);
 // - всі червоні карти
+const redCards=cards.filter((card)=>card.color==='red');
+console.log(redCards);
 // - всі буби
+const diamonds=cards.filter((card)=>card.cardSuit==='diamonds');
+console.log(diamonds);
 // - всі трефи від 9 та більше
-//
+const a=cards.filter((card)=>card.cardSuit==='clubs'&& ['9','10', 'ace','jack','queen','king'].includes(card.value));
+console.log(a);
 // {
 //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
 //         value: '', // '6'-'10', 'ace','jack','queen','king','joker'
@@ -104,16 +139,29 @@ let color=['red','black'];
 // =========================
 //
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
-// {
-//     spades:[],
-//         diamonds:[],
-//     hearts:[],
-//     clubs:[]
-// }
+const cards4=cards.reduce((acc,cur)=>{
+    switch(cur.cardSuit){
+        case 'spade':
+        acc.spades.push(cur);
+        break;
+        case 'clubs':
+            acc.spades.push(cur);
+            break;
+        case 'heart':
+            acc.spades.push(cur);
+            break;
+        case 'diamonds':
+            acc.spades.push(cur);
+            break;
 
+    }
+    return acc;
+},{spades:[],
+    diamonds:[],
+    hearts:[],
+    clubs:[]});
 
-
-
+console.log(cards4);
 // =========================
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
     let coursesArray = [
@@ -187,8 +235,6 @@ let color=['red','black'];
 ];
   console.log(coursesArray);
 // --написати пошук всіх об'єктів, в який в modules є sass
-let find=coursesArray.find(value => value.modules==='sass');
-console.log(find);
+coursesArray.filter((value) => value.modules.includes('sass'));
 // --написати пошук всіх об'єктів, в який в modules є docker
-let find1=coursesArray.find(value => value.modules==='docker');
-console.log(find1);
+coursesArray.filter((value) => value.modules.includes('docker'));
