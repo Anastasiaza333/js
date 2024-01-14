@@ -11,7 +11,7 @@ const fetchPostDetails = () => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                throw new Error(` error! Status: ${response.status}`);
             }
             return response.json();
         })
@@ -39,7 +39,7 @@ const fetchPostDetails = () => {
             fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
+                        throw new Error(` error! Status: ${response.status}`);
                     }
                     return response.json();
                 })
@@ -69,9 +69,9 @@ const fetchPostDetails = () => {
 
                     detailsContainer.appendChild(commentsList);
                 })
-                .catch(error => console.error('Error fetching comments:', error));
+                .catch(error => console.error('error fetching comments:', error));
         })
-        .catch(error => console.error('Error fetching post details:', error));
+        .catch(error => console.error('error fetching post details:', error));
 };
 
 fetchPostDetails();
